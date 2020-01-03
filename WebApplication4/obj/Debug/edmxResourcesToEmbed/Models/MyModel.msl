@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyDbModelStoreContainer" CdmEntityContainer="MyDbEntities5">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="MyDbModel.Categorie">
+        <MappingFragment StoreEntitySet="Categorie">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="MyDbModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Adresse" ColumnName="Adresse" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marques">
+      <EntityTypeMapping TypeName="MyDbModel.Marque">
+        <MappingFragment StoreEntitySet="Marque">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modules">
+      <EntityTypeMapping TypeName="MyDbModel.Module">
+        <MappingFragment StoreEntitySet="Module">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="MarqueId" ColumnName="MarqueId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Propretaires">
+      <EntityTypeMapping TypeName="MyDbModel.Propretaire">
+        <MappingFragment StoreEntitySet="Propretaire">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="PropetaireType" ColumnName="PropetaireType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropretaireTypes">
+      <EntityTypeMapping TypeName="MyDbModel.PropretaireType">
+        <MappingFragment StoreEntitySet="PropretaireType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Voitures">
+      <EntityTypeMapping TypeName="MyDbModel.Voiture">
+        <MappingFragment StoreEntitySet="Voiture">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="imma" ColumnName="imma" />
+          <ScalarProperty Name="capacite" ColumnName="capacite" />
+          <ScalarProperty Name="charge_diesl" ColumnName="charge_diesl" />
+          <ScalarProperty Name="kilometrage" ColumnName="kilometrage" />
+          <ScalarProperty Name="max_vitesse" ColumnName="max_vitesse" />
+          <ScalarProperty Name="montant" ColumnName="montant" />
+          <ScalarProperty Name="Marque" ColumnName="Marque" />
+          <ScalarProperty Name="Module" ColumnName="Module" />
+          <ScalarProperty Name="Propretaire" ColumnName="Propretaire" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="GPS" ColumnName="GPS" />
+          <ScalarProperty Name="imageLocation" ColumnName="imageLocation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

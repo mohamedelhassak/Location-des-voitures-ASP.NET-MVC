@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <a href="~/Content/bootstrap-theme.css.map">~/Content/bootstrap-theme.css.map</a>
+    <a href="~/Content/bootstrap.css.map">~/Content/bootstrap.css.map</a>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+
+</head>
+<body style="margin-top:-50px">
+
+
+    <!-- Custom styles for this template -->
+
+    
+
+
+    <div class="container-fluid">
+        <nav >
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        @Html.ActionLink("Visite Site", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    </div>
+                    <div class="navbar-collapse collapse">
+
+
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="row" style="padding-top:30px">
+            <nav class="col-md-2 d-none d-md-block bg-info sidebar " style="height: 800px;background-color: #d3caca;">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            @Html.ActionLink("Tableau du board", "Index", "Dashboard")
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Clients", "Index", "Clients")
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Marques", "Index", "Marques")
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Modules", "Index", "Modules")
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("les types des Propretaires", "Index", "PropretaireTypes")
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Propretaires", "Index", "Propretaires")
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Categories", "Index", "Categories")
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Voitures", "Index", "Voitures")
+                        </li>
+                   
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

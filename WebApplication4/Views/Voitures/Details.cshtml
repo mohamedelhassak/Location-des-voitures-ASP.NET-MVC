@@ -1,0 +1,107 @@
+﻿@model WebApplication4.Models.Voiture
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+    <h2>Les informations sur la voiture @Html.DisplayFor(model => model.imma)</h2>
+
+<div>
+    <h4>Voiture</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.imma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imma)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.capacite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.capacite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.charge_diesl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.charge_diesl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kilometrage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kilometrage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.max_vitesse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.max_vitesse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.montant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.montant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GPS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GPS)
+        </dd>
+
+        <dt>
+           Categorie
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categorie1.Nom)
+        </dd>
+
+        <dt>
+           La marque
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marque1.Nom)
+        </dd>
+
+        <dt>
+            Module
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Module1.Nom)
+        </dd>
+
+        <dt>
+           Le propretaire@Html.DisplayNameFor(model => model.Propretaire1.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Propretaire1.Nom)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id },new { @class ="btn btn-info"}) 
+    @Html.ActionLink("Retour", "Index",null,new { @class ="btn btn-default"})
+</p>

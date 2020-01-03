@@ -1,0 +1,110 @@
+﻿@model WebApplication4.Models.Voiture
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Supprimer Voiture</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.imma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.imma)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.capacite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.capacite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.charge_diesl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.charge_diesl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kilometrage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kilometrage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.max_vitesse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.max_vitesse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.montant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.montant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GPS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GPS)
+        </dd>
+
+        <dt>
+           Categorie
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categorie1.Nom)
+        </dd>
+
+        <dt>
+           La marque
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marque1.Nom)
+        </dd>
+
+        <dt>
+           Module
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Module1.Nom)
+        </dd>
+
+        <dt>
+            le propretaire
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Propretaire1.Nom)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Supprimer" class="btn btn-default" /> 
+            @Html.ActionLink("Retour", "Index",null,new { @class ="btn btn-default"})
+        </div>
+    }
+</div>

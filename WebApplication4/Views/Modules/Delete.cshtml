@@ -1,0 +1,39 @@
+﻿@model WebApplication4.Models.Module
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Supprimer un module</h2>
+
+<div>
+    <div class="row">
+        <div class="col-lg-6">
+            <table class="table">
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.Nom)</td>
+                    <td>@Html.DisplayFor(model => model.Nom)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.Marque)</td>
+                    <td>@Html.DisplayFor(model => model.Marque.Nom)</td>
+                </tr>
+
+            </table>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Supprimer" class="btn btn-danger form-control" />
+                    @Html.ActionLink("Retour", "Index", null, new { @class = "btn btn-default " })
+                </div>
+            }
+        </div>
+
+    </div>
+
+  
+</div>

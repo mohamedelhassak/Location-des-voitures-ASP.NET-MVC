@@ -1,0 +1,101 @@
+﻿@model IEnumerable<WebApplication4.Models.Voiture>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>La liste des voitures</h2>
+
+<p>
+    @Html.ActionLink("Ajouter Nouvelle Voiture", "Create",null,new { @class ="btn btn-default"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.imma)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imageLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.capacite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.charge_diesl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kilometrage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.max_vitesse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.montant)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GPS)
+        </th>
+        <th>
+            Categorie
+        </th>
+        <th>
+            Marque
+        </th>
+        <th>
+            Module
+        </th>
+        <th>
+            Propretaire
+        </th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.imma)
+            </td>
+            <td>
+                <img src="@Url.Content(item.imageLocation)" width="60" height="70" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.capacite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.charge_diesl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kilometrage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.max_vitesse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.montant)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GPS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categorie1.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marque1.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Module1.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Propretaire1.Nom)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning" })
+                @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

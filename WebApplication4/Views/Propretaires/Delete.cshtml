@@ -1,0 +1,53 @@
+﻿@model WebApplication4.Models.Propretaire
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+    <h2>Supprimer un Propretaire</h2>
+
+<div>
+  
+    <div class="row">
+        <div class="col-lg-6">
+            <table class="table">
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.Nom)</td>
+                    <td>@Html.DisplayFor(model => model.Nom)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.Prenom)</td>
+                    <td>@Html.DisplayFor(model => model.Prenom)</td>
+                </tr>
+
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.Email)</td>
+                    <td>@Html.DisplayFor(model => model.Email)</td>
+                </tr>
+
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.Tel)</td>
+                    <td>@Html.DisplayFor(model => model.Tel)</td>
+                </tr>
+
+                <tr>
+                    <td>Le type</td>
+                    <td>@Html.DisplayFor(model => model.PropretaireType.Nom)</td>
+                </tr>
+            </table>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Supprimer" class="btn btn-danger " />
+                    @Html.ActionLink("Retour", "Index", null, new { @class = "btn btn-default " })
+                </div>
+            }
+        </div>
+           
+        </div>
+
+   
+</div>

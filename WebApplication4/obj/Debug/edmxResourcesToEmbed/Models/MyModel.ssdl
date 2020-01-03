@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Categorie">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="varchar" MaxLength="50" />
+    <Property Name="Prenom" Type="varchar" MaxLength="50" />
+    <Property Name="Age" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Adresse" Type="varchar" MaxLength="50" />
+    <Property Name="Tel" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Marque">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Module">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="varchar" MaxLength="50" />
+    <Property Name="MarqueId" Type="int" />
+  </EntityType>
+  <EntityType Name="Propretaire">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="varchar" MaxLength="50" />
+    <Property Name="Prenom" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Tel" Type="varchar" MaxLength="50" />
+    <Property Name="PropetaireType" Type="int" />
+  </EntityType>
+  <EntityType Name="PropretaireType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Voiture">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="imma" Type="varchar" MaxLength="50" />
+    <Property Name="capacite" Type="int" />
+    <Property Name="charge_diesl" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="kilometrage" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="max_vitesse" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="montant" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Marque" Type="int" />
+    <Property Name="Module" Type="int" />
+    <Property Name="Propretaire" Type="int" />
+    <Property Name="Categorie" Type="int" />
+    <Property Name="GPS" Type="bit" />
+    <Property Name="imageLocation" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Module_ToTable">
+    <End Role="Marque" Type="Self.Marque" Multiplicity="0..1" />
+    <End Role="Module" Type="Self.Module" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marque">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Module">
+        <PropertyRef Name="MarqueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Propretaire_ToTable">
+    <End Role="PropretaireType" Type="Self.PropretaireType" Multiplicity="0..1" />
+    <End Role="Propretaire" Type="Self.Propretaire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropretaireType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Propretaire">
+        <PropertyRef Name="PropetaireType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Voiture_ToTable">
+    <End Role="Marque" Type="Self.Marque" Multiplicity="0..1" />
+    <End Role="Voiture" Type="Self.Voiture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marque">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Voiture">
+        <PropertyRef Name="Marque" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Voiture_ToTable_1">
+    <End Role="Module" Type="Self.Module" Multiplicity="0..1" />
+    <End Role="Voiture" Type="Self.Voiture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Module">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Voiture">
+        <PropertyRef Name="Module" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Voiture_ToTable_2">
+    <End Role="Propretaire" Type="Self.Propretaire" Multiplicity="0..1" />
+    <End Role="Voiture" Type="Self.Voiture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Propretaire">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Voiture">
+        <PropertyRef Name="Propretaire" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Voiture_ToTable_3">
+    <End Role="Categorie" Type="Self.Categorie" Multiplicity="0..1" />
+    <End Role="Voiture" Type="Self.Voiture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Voiture">
+        <PropertyRef Name="Categorie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MyDbModelStoreContainer">
+    <EntitySet Name="Categorie" EntityType="Self.Categorie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Marque" EntityType="Self.Marque" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Module" EntityType="Self.Module" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Propretaire" EntityType="Self.Propretaire" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PropretaireType" EntityType="Self.PropretaireType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Voiture" EntityType="Self.Voiture" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Module_ToTable" Association="Self.FK_Module_ToTable">
+      <End Role="Marque" EntitySet="Marque" />
+      <End Role="Module" EntitySet="Module" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Propretaire_ToTable" Association="Self.FK_Propretaire_ToTable">
+      <End Role="PropretaireType" EntitySet="PropretaireType" />
+      <End Role="Propretaire" EntitySet="Propretaire" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Voiture_ToTable" Association="Self.FK_Voiture_ToTable">
+      <End Role="Marque" EntitySet="Marque" />
+      <End Role="Voiture" EntitySet="Voiture" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Voiture_ToTable_1" Association="Self.FK_Voiture_ToTable_1">
+      <End Role="Module" EntitySet="Module" />
+      <End Role="Voiture" EntitySet="Voiture" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Voiture_ToTable_2" Association="Self.FK_Voiture_ToTable_2">
+      <End Role="Propretaire" EntitySet="Propretaire" />
+      <End Role="Voiture" EntitySet="Voiture" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Voiture_ToTable_3" Association="Self.FK_Voiture_ToTable_3">
+      <End Role="Categorie" EntitySet="Categorie" />
+      <End Role="Voiture" EntitySet="Voiture" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
