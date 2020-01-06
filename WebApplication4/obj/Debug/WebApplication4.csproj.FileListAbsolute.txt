@@ -105,3 +105,8 @@ C:\Users\HP\source\repos\WebApplication4\WebApplication4\obj\Debug\WebApplicatio
 C:\Users\HP\source\repos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.csproj.CopyComplete
 C:\Users\HP\source\repos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.dll
 C:\Users\HP\source\repos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.pdb
+C:\Users\HP\source\repos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.csproj.GenerateResource.cache
+C:\Users\HP\source\repos\WebApplication4\WebApplication4\bin\en\WebApplication4.resources.dll
+C:\Users\HP\source\repos\WebApplication4\WebApplication4\obj\Debug\en\WebApplication4.resources.dll
+C:\Users\HP\source\repos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.Resources.Views.Shared._Layout.resources
+C:\Users\HP\source\repos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.Resources.Views.Shared._Layout.en.resources

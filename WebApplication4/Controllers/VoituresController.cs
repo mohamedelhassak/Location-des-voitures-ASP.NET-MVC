@@ -37,6 +37,7 @@ namespace WebApplication4.Controllers
             }
             return View(voiture);
         }
+        
 
         // GET: Voitures/Create
         public ActionResult Create()

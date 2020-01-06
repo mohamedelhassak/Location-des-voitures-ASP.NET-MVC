@@ -11,6 +11,8 @@ namespace WebApplication4.Controllers
     public class DashboardController : Controller
     {
         // GET: Dashboard
+
+        [Route("/Admin/Dashboard")]
         public ActionResult Index()
         {
             return View();
