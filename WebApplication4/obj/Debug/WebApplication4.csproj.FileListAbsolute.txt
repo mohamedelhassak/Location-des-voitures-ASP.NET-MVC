@@ -110,3 +110,12 @@ C:\Users\HP\source\repos\WebApplication4\WebApplication4\bin\en\WebApplication4.
 C:\Users\HP\source\repos\WebApplication4\WebApplication4\obj\Debug\en\WebApplication4.resources.dll
 C:\Users\HP\source\repos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.Resources.Views.Shared._Layout.resources
 C:\Users\HP\source\repos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.Resources.Views.Shared._Layout.en.resources
+C:\Users\HP\source\repos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.Resources.Views.Home.Index.resources
+C:\Users\HP\source\repos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.Resources.Views.Home.Index.en.resources
+C:\Users\HP\source\repos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.Resources.Views.Home.Voiture-info.resources
+C:\Users\HP\source\repos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.Resources.Views.Home.Voiture-info.en.resources
+C:\Users\HP\source\repos\WebApplication4\WebApplication4\bin\ar\WebApplication4.resources.dll
+C:\Users\HP\source\repos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.Resources.Views.Home.Index.ar.resources
+C:\Users\HP\source\repos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.Resources.Views.Home.Voiture-info.ar.resources
+C:\Users\HP\source\repos\WebApplication4\WebApplication4\obj\Debug\ar\WebApplication4.resources.dll
+C:\Users\HP\source\repos\WebApplication4\WebApplication4\obj\Debug\WebApplication4.Resources.Views.Shared._Layout.ar.resources

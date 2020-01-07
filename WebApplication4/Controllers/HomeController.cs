@@ -1,5 +1,4 @@
 ﻿using System;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -19,10 +18,17 @@ namespace WebApplication4.Controllers
         public ActionResult Index()
         {
             ViewBag.cat = new SelectList(db.Categories,"Id","Nom");
-            ViewBag.voi = new SelectList(db.Categories,"Id","Nom");
             var voitures = db.Voitures.Include(v => v.Categorie1).Include(v => v.Marque1).Include(v => v.Module1).Include(v => v.Propretaire1).OrderBy(v=>v.montant);
             return View(voitures.ToList());
          
+        }
+        [HttpPost]
+        public ActionResult Index(int catId)
+        {
+            ViewBag.cat = new SelectList(db.Categories, "Id", "Nom");
+            var voitures = db.Voitures.Include(v => v.Categorie1).Include(v => v.Marque1).Include(v => v.Module1).Include(v => v.Propretaire1).OrderBy(v => v.montant).Where(x=>x.Categorie1.Id==catId);
+            return View(voitures.ToList());
+
         }
 
         public ActionResult voiture_info(int? id)

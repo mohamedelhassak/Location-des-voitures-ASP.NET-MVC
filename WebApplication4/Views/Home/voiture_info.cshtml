@@ -24,14 +24,14 @@
                             <span class="price h3 text-warning">
                                 <span class="currency">MAD</span><span class="num"> @Html.DisplayFor(model => model.montant)</span>
                             </span>
-                            <span>/jour</span>
+                            <span>/@WebApplication4.Resources.Views.Home.Voiture_info.jour</span>
                         </p> <!-- price-detail-wrap .// -->
                         <dl class="param param-feature">
-                            <dt>Categorie#</dt>
+                            <dt>@WebApplication4.Resources.Views.Home.Voiture_info.categorie#</dt>
                             <dd> @Html.DisplayFor(model => model.Categorie1.Nom)</dd>
                         </dl>  <!-- item-property-hor .// -->
                         <dl class="param param-feature">
-                            <dt>Capacite#</dt>
+                            <dt>@WebApplication4.Resources.Views.Home.Voiture_info.capacite#</dt>
                             <dd> @Html.DisplayFor(model => model.capacite) personnes</dd>
                         </dl>  <!-- item-property-hor .// -->
 
@@ -42,13 +42,13 @@
                         </dl>  <!-- item-property-hor .// -->
 
                         <dl class="param param-feature">
-                            <dt>La vitesse maximale#</dt>
+                            <dt>@WebApplication4.Resources.Views.Home.Voiture_info.max_v#</dt>
                             <dd> @Html.DisplayFor(model => model.max_vitesse) km/h</dd>
                         </dl>  <!-- item-property-hor .// -->
 
                         <hr>
-                        @Html.ActionLink("Retour", "Index", null, new { @class = "btn btn-default  " })
-                        @Html.ActionLink("Reserver ", "Index", null, new { @class = "btn btn-success" })
+                        @Html.ActionLink(@WebApplication4.Resources.Views.Home.Voiture_info.retour, "Index", null, new { @class = "btn btn-default  " })
+                        @Html.ActionLink(@WebApplication4.Resources.Views.Home.Voiture_info.Reserver, "Index", null, new { @class = "btn btn-success" })
 
                     </article> <!-- card-body.// -->
                 </aside> <!-- col.// -->

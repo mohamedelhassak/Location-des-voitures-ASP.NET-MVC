@@ -26,11 +26,11 @@
             <div class="col-md-6" style="margin-top:80px">
                 <div class="carousel-item">
                     <h2 style="    font-family: fantasy;padding: 20px;">
-                        Location de voitures au MAROC
-                       
+                        @WebApplication4.Resources.Views.Home.Index.Titre
+
                     </h2>
                     <p style="color:cornflowerblue">
-                        Recherchez sur des centaines de sites et louez un véhicule au MAROC
+                        @WebApplication4.Resources.Views.Home.Index.Soustitre
                     </p>
                 </div>
             </div>
@@ -49,24 +49,24 @@
 </section>
 <section class="search-sec">
     <div class="container">
-        <form action="#" method="post" novalidate="novalidate">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-md-6"></div>
-                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                            @Html.DropDownList("cats", ViewBag.cat as SelectList, "---Choisir Categorie---", new { @class = "form-control " });
+        @using (Html.BeginForm()) { 
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-md-6"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                        @Html.DropDownList("catId", ViewBag.cat as SelectList, @WebApplication4.Resources.Views.Home.Index.choixCat, new { @class = "form-control " });
 
-                        </div>
-                        
-                        
-                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                            <button type="button" class="btn btn-success wrn-btn">Chercher</button>
-                        </div>
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                        <button type="submit" class="btn btn-success wrn-btn"> @WebApplication4.Resources.Views.Home.Index.chercher</button>
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
+        }
     </div>
 </section>
 
@@ -78,7 +78,7 @@
 <div class="container">
     <div class="row ">
 
-        <h1 class="text-center" style="color:#544e4e;margin-bottom:50px;font-weight:bold">Les voitures les moins cher</h1>
+        <h1 class="text-center" style="color:#544e4e;margin-bottom:50px;font-weight:bold"> @WebApplication4.Resources.Views.Home.Index.titrecats</h1>
 
         @foreach (var item in Model)
         {
@@ -90,10 +90,10 @@
                             <a href="#">@Html.DisplayFor(modelItem => item.Marque1.Nom)  @Html.DisplayFor(modelItem => item.Module1.Nom)</a>
                         </h4>
                         <h5 style="font-size:16px;font-weight:bold">MAD @Html.DisplayFor(modelItem => item.montant)</h5>
-                        <p class="card-text"><span style="color: #a29b9b;">Categorie :</span> @Html.DisplayFor(modelItem => item.Categorie1.Nom)</p>
-                        <p class="card-text"><span style="color: #a29b9b;">Capacite :</span> @Html.DisplayFor(modelItem => item.capacite) personnes</p>
-                        <p class="card-text"><span style="color: #a29b9b;">Max vitesse :</span> @Html.DisplayFor(modelItem => item.max_vitesse) km/h</p>
-                        @Html.ActionLink("Visualiser", "voiture_info", new { id = item.Id }, new { @class = "btn btn-info form-control" })
+                        <p class="card-text"><span style="color: #a29b9b;"> @WebApplication4.Resources.Views.Home.Index.categorie :</span> @Html.DisplayFor(modelItem => item.Categorie1.Nom)</p>
+                        <p class="card-text"><span style="color: #a29b9b;"> @WebApplication4.Resources.Views.Home.Index.capacite :</span> @Html.DisplayFor(modelItem => item.capacite) personnes</p>
+                        <p class="card-text"><span style="color: #a29b9b;"> @WebApplication4.Resources.Views.Home.Index.max_v :</span> @Html.DisplayFor(modelItem => item.max_vitesse) km/h</p>
+                        @Html.ActionLink( @WebApplication4.Resources.Views.Home.Index.visualiser, "voiture_info", new { id = item.Id }, new { @class = "btn btn-info form-control" })
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -107,7 +107,7 @@
 </div>
 
 <div class="row text-center" style="background-color:#f8f8f8">
-    <h1 style="padding:40px">Bienvenue Chez Nous ...</h1>
+    <h1 style="padding:40px"> @WebApplication4.Resources.Views.Home.Index.maptitre</h1>
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52900.302165590576!2d-5.036203856290953!3d34.03697313601347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xee579070206772d7!2sAVIS%20-%20Location%20Voiture%20F%C3%A8s!5e0!3m2!1sfr!2sma!4v1578249024883!5m2!1sfr!2sma" width="900" height="450" frameborder="0" style="border:0;" allowfullscreen="true"></iframe>
 </div>
 
