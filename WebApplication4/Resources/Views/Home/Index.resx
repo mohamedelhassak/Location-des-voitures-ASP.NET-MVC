@@ -129,6 +129,9 @@
   <data name="choixCat" xml:space="preserve">
     <value>Choisir Categorie</value>
   </data>
+  <data name="choixMar" xml:space="preserve">
+    <value>Choisir Marque</value>
+  </data>
   <data name="maptitre" xml:space="preserve">
     <value>Bienvenue Chez Nous ...</value>
   </data>

@@ -11,33 +11,25 @@ namespace WebApplication4.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Client
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Client()
+        {
+            this.Reservations = new HashSet<Reservation>();
+        }
+    
         public int Id { get; set; }
-
-        [Required(ErrorMessage = "svp ce champ ne doit pas etre vide")]
-        [StringLength(20, MinimumLength = 3, ErrorMessage = "Le Nom doit etre entre 3 et 20 caracteres")]
         public string Nom { get; set; }
-
-        [Required(ErrorMessage = "svp ce champ ne doit pas etre vide")]
-        [StringLength(20, MinimumLength = 3, ErrorMessage = "Le Prenom doit etre entre 3 et 20 caracteres")]
         public string Prenom { get; set; }
-
-        [Required(ErrorMessage = "svp ce champ ne doit pas etre vide")]
-       [Range(18,200,ErrorMessage ="L'age doit etre superieure a 18 ans ")]
         public Nullable<decimal> Age { get; set; }
-        [Required(ErrorMessage = "svp ce champ ne doit pas etre vide")]
-        [RegularExpression(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([azA-Z]{2,4}|[0-9]{1,3})(\]?)$",ErrorMessage ="svp entrer un valid email")]
         public string Email { get; set; }
-
-        [Required(ErrorMessage = "svp ce champ ne doit pas etre vide")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "L'adresse  doit etre entre 3 et 50 caracteres")]
         public string Adresse { get; set; }
-
-        [Required(ErrorMessage = "svp ce champ ne doit pas etre vide")]
-        [StringLength(13, MinimumLength = 10, ErrorMessage = "Le Tel doit etre entre 10 et 13 caracteres")]
         public string Tel { get; set; }
+        public Nullable<int> estNoir { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reservation> Reservations { get; set; }
     }
 }

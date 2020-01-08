@@ -14,7 +14,7 @@ namespace WebApplication4.Controllers
     [Authorize]
     public class VoituresController : Controller
     {
-        private MyDbEntities5 db = new MyDbEntities5();
+        private MyDbEntities6 db = new MyDbEntities6();
 
         // GET: Voitures
         public ActionResult Index()
@@ -54,40 +54,21 @@ namespace WebApplication4.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-          public ActionResult Create( Voiture voiture, HttpPostedFileBase imageLocation)
+        public ActionResult Create([Bind(Include = "Id,imma,capacite,charge_diesl,kilometrage,max_vitesse,montant,Marque,Module,Propretaire,Categorie,GPS,imageLocation")] Voiture voiture)
+        {
+            if (ModelState.IsValid)
             {
-
-                if (ModelState.IsValid){
-
-                try
-                {
-                    if (imageLocation != null)
-                    {
-                        string path = Path.Combine(Server.MapPath("~/Content/images/voitures"), Path.GetFileName(imageLocation.FileName));
-                        imageLocation.SaveAs(path);
-                        ViewBag.path = path;
-                        Console.WriteLine(voiture.imageLocation);
-
-
-                    }
-                }
-                catch (Exception)
-                {
-
-                    ViewBag.FileStatus = "Error while file uploading.";
-                }
-
-                    db.Voitures.Add(voiture);
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
-                }
-
-                ViewBag.Categorie = new SelectList(db.Categories, "Id", "Nom", voiture.Categorie);
-                ViewBag.Marque = new SelectList(db.Marques, "Id", "Nom", voiture.Marque);
-                ViewBag.Module = new SelectList(db.Modules, "Id", "Nom", voiture.Module);
-                ViewBag.Propretaire = new SelectList(db.Propretaires, "Id", "Nom", voiture.Propretaire);
-                return View(voiture);
+                db.Voitures.Add(voiture);
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
+
+            ViewBag.Categorie = new SelectList(db.Categories, "Id", "Nom", voiture.Categorie);
+            ViewBag.Marque = new SelectList(db.Marques, "Id", "Nom", voiture.Marque);
+            ViewBag.Module = new SelectList(db.Modules, "Id", "Nom", voiture.Module);
+            ViewBag.Propretaire = new SelectList(db.Propretaires, "Id", "Nom", voiture.Propretaire);
+            return View(voiture);
+        }
 
         public ActionResult UploadFiles(HttpPostedFileBase imageLocation)
         {

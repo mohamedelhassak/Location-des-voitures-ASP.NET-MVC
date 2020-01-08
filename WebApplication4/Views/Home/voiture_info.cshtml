@@ -11,7 +11,7 @@
                 <aside class="col-sm-5 border-right">
                     <article class="gallery-wrap">
                         <div class="img-big-wrap">
-                            <div><img style="max-width: 100%;max-height: 100%;" src="http://placehold.it/700x400"></div>
+                            <div><img style="max-width: 100%;max-height: 100%;" src="@Url.Content(Model.imageLocation)"></div>
                         </div> <!-- slider-product.// -->
 
                     </article> <!-- gallery-wrap .end// -->
@@ -48,7 +48,7 @@
 
                         <hr>
                         @Html.ActionLink(@WebApplication4.Resources.Views.Home.Voiture_info.retour, "Index", null, new { @class = "btn btn-default  " })
-                        @Html.ActionLink(@WebApplication4.Resources.Views.Home.Voiture_info.Reserver, "Index", null, new { @class = "btn btn-success" })
+                        @Html.ActionLink(@WebApplication4.Resources.Views.Home.Voiture_info.Reserver, "Reserver","Reservations", new { id = Model.Id}, new { @class = "btn btn-success" })
 
                     </article> <!-- card-body.// -->
                 </aside> <!-- col.// -->

@@ -13,8 +13,8 @@ namespace WebApplication4.Controllers
     [Authorize]
     public class ClientsController : Controller
     {
-        private MyDbEntities5 db = new MyDbEntities5();
-
+        private MyDbEntities6 db = new MyDbEntities6();
+        
         // GET: Clients
         public ActionResult Index()
         {
@@ -73,7 +73,8 @@ namespace WebApplication4.Controllers
             }
             return View(client);
         }
-
+       
+       
         // POST: Clients/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -90,6 +91,39 @@ namespace WebApplication4.Controllers
             return View(client);
         }
 
+        // GET: Clients/AddBlack/5
+        public ActionResult AddBlack(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Client client = db.Clients.Find(id);
+            if (client == null)
+            {
+                return HttpNotFound();
+            }
+            return View(client);
+        }
+        [HttpPost, ActionName("AddBlack")]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddBlackConfirmed(int id)
+        {
+            Client client = db.Clients.Find(id);
+            if (client.estNoir == 1)
+            {
+                client.estNoir = 0;
+            }
+            else if (client.estNoir == 0)
+            {
+                client.estNoir = 1;
+            }
+
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
         // GET: Clients/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -102,6 +136,7 @@ namespace WebApplication4.Controllers
             {
                 return HttpNotFound();
             }
+
             return View(client);
         }
 

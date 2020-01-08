@@ -47,7 +47,7 @@
                     @Html.DisplayFor(modelItem => item.Prenom)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Age)
+                   @Html.DisplayFor(modelItem => item.Age)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Email)
@@ -59,9 +59,21 @@
                     @Html.DisplayFor(modelItem => item.Tel)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id },new { @class ="btn btn-warning"}) 
-                    @Html.ActionLink("Details", "Details", new { id = item.Id },new { @class ="btn btn-info"}) 
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id },new { @class ="btn btn-danger"})
+                    @using (Html.BeginForm())
+                    {
+                        if (item.estNoir == 0)
+                        {
+                            @Html.ActionLink("Add To BlackList", "AddBlack", new { id = item.Id }, new { @class = "btn btn-primary" })
+                        }
+                        else
+                        { 
+                            @Html.ActionLink("Remove From BlackList", "AddBlack", new { id = item.Id }, new { @class = "btn btn-default" })
+                    }
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning" })
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                }
+
                 </td>
             </tr>
         }

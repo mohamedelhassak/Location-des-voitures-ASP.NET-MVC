@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebApplication4.Models.Reservation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.date_debut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date_fin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.montant)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Client1.Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Propretaire.Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Voiture1.imma)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.date_debut)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.date_fin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.montant)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Client1.Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Propretaire.Nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Voiture1.imma)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

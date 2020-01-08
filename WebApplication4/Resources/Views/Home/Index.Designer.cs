@@ -97,6 +97,15 @@ namespace WebApplication4.Resources.Views.Home {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choisir Marque.
+        /// </summary>
+        public static string choixMar {
+            get {
+                return ResourceManager.GetString("choixMar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bienvenue Chez Nous ....
         /// </summary>
         public static string maptitre {

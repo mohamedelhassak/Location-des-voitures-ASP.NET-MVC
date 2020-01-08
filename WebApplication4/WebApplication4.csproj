@@ -180,24 +180,55 @@
     <Compile Include="Controllers\ModulesController.cs" />
     <Compile Include="Controllers\PropretairesController.cs" />
     <Compile Include="Controllers\PropretaireTypesController.cs" />
+    <Compile Include="Controllers\ReservationsController.cs" />
     <Compile Include="Controllers\VoituresController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Categorie.cs">
-      <DependentUpon>MyModel.tt</DependentUpon>
+      <DependentUpon>MonModel2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Client.cs">
-      <DependentUpon>MyModel.tt</DependentUpon>
+      <DependentUpon>MonModel2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Marque.cs">
-      <DependentUpon>MyModel.tt</DependentUpon>
+      <DependentUpon>MonModel2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Module.cs">
-      <DependentUpon>MyModel.tt</DependentUpon>
+      <DependentUpon>MonModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MonModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MonModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MonModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MonModel2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonModel2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MonModel2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MonModel2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MonModel2.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\MyModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -215,13 +246,16 @@
       <DependentUpon>MyModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Propretaire.cs">
-      <DependentUpon>MyModel.tt</DependentUpon>
+      <DependentUpon>MonModel2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PropretaireType.cs">
-      <DependentUpon>MyModel.tt</DependentUpon>
+      <DependentUpon>MonModel2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Reservation.cs">
+      <DependentUpon>MonModel2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Voiture.cs">
-      <DependentUpon>MyModel.tt</DependentUpon>
+      <DependentUpon>MonModel2.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Views\Home\Index.ar.Designer.cs">
@@ -276,11 +310,13 @@
     <Content Include="App_Data\MyDb_log.ldf">
       <DependentUpon>MyDb.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\images\cars\bmwCar.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\shop-homepage.css" />
+    <Content Include="Content\images\cars\hondaCar.jpg" />
     <Content Include="Content\images\homePageCarPic.jpg" />
     <Content Include="Content\images\HomePageCarPicture.jfif" />
     <Content Include="Content\images\vw-bulli-3583964_1280.png" />
@@ -289,6 +325,26 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\MonModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MonModel.edmx</DependentUpon>
+      <LastGenOutput>MonModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MonModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MonModel.edmx</DependentUpon>
+      <LastGenOutput>MonModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MonModel2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MonModel2.edmx</DependentUpon>
+      <LastGenOutput>MonModel2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MonModel2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MonModel2.edmx</DependentUpon>
+      <LastGenOutput>MonModel2.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\MyModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MyModel.edmx</DependentUpon>
@@ -307,6 +363,20 @@
     </EntityDeploy>
     <Content Include="Models\MyModel.edmx.diagram">
       <DependentUpon>MyModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\MonModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MonModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MonModel.edmx.diagram">
+      <DependentUpon>MonModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\MonModel2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MonModel2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MonModel2.edmx.diagram">
+      <DependentUpon>MonModel2.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -392,6 +462,14 @@
     <Content Include="Views\Voitures\View.cshtml" />
     <Content Include="Views\Home\voiture_info.cshtml" />
     <Content Include="Views\Lang\Index.cshtml" />
+    <Content Include="Views\Clients\AddBlack.cshtml" />
+    <Content Include="Views\Clients\Details.cshtml" />
+    <Content Include="Views\Reservations\Create.cshtml" />
+    <Content Include="Views\Reservations\Delete.cshtml" />
+    <Content Include="Views\Reservations\Details.cshtml" />
+    <Content Include="Views\Reservations\Edit.cshtml" />
+    <Content Include="Views\Reservations\Index.cshtml" />
+    <Content Include="Views\Reservations\Reserver.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Views\Home\Index.ar.resx">

@@ -1,0 +1,50 @@
+﻿@model WebApplication4.Models.Client
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Les informations de  :</h2>
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Nom) @Html.DisplayFor(model => model.Prenom) </h4>
+    <div class="row">
+        <div class="col-lg-6">
+            <table class="table">
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.Nom)</td>
+                    <td>@Html.DisplayFor(model => model.Nom)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.Prenom)</td>
+                    <td>@Html.DisplayFor(model => model.Prenom)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.Age)</td>
+                    <td>@Html.DisplayFor(model => model.Age)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.Email)</td>
+                    <td>@Html.DisplayFor(model => model.Email)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.Adresse)</td>
+                    <td>@Html.DisplayFor(model => model.Adresse)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.Tel)</td>
+                    <td>@Html.DisplayFor(model => model.Tel)</td>
+                </tr>
+
+            </table>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-info " })
+                @Html.ActionLink("Retour", "Index", null, new { @class = "btn btn-default " })
+            </p>
+        </div>
+    </div>
+        
+    
+</div>
+

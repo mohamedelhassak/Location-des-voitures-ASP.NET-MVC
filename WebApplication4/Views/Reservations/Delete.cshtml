@@ -1,0 +1,73 @@
+﻿@model WebApplication4.Models.Reservation
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Reservation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.date_debut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_debut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date_fin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_fin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.montant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.montant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Client1.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client1.Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Propretaire.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Propretaire.Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Voiture1.imma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Voiture1.imma)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

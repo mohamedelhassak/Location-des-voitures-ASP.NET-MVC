@@ -7,7 +7,7 @@
 
 <h2>Ajoutre nouvelle voiture</h2>
 
-@using (Html.BeginForm("Create", "Voitures", FormMethod.Post, new { enctype ="multipart/form-data"})) 
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     

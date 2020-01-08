@@ -11,42 +11,34 @@ namespace WebApplication4.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Voiture
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Voiture()
+        {
+            this.Reservations = new HashSet<Reservation>();
+        }
+    
         public int Id { get; set; }
-        [Required(ErrorMessage = "svp ce champ ne doit pas etre vide")]
         public string imma { get; set; }
-
-        [Required(ErrorMessage = "svp ce champ ne doit pas etre vide")]
         public Nullable<int> capacite { get; set; }
-        [Required(ErrorMessage = "svp ce champ ne doit pas etre vide")]
         public Nullable<decimal> charge_diesl { get; set; }
-        [Required(ErrorMessage = "svp ce champ ne doit pas etre vide")]
         public Nullable<decimal> kilometrage { get; set; }
-        [Required(ErrorMessage = "svp ce champ ne doit pas etre vide")]
         public Nullable<decimal> max_vitesse { get; set; }
-        [Required(ErrorMessage = "svp ce champ ne doit pas etre vide")]
         public Nullable<decimal> montant { get; set; }
-        [Required(ErrorMessage = "svp ce champ ne doit pas etre vide")]
         public Nullable<int> Marque { get; set; }
-        [Required(ErrorMessage = "svp ce champ ne doit pas etre vide")]
         public Nullable<int> Module { get; set; }
-        [Required(ErrorMessage = "svp ce champ ne doit pas etre vide")]
         public Nullable<int> Propretaire { get; set; }
-        [Required(ErrorMessage = "svp ce champ ne doit pas etre vide")]
         public Nullable<int> Categorie { get; set; }
         public Nullable<bool> GPS { get; set; }
-        public  string imageLocation { get; set; }
-        [Required(ErrorMessage = "svp ce champ ne doit pas etre vide")]
-
+        public string imageLocation { get; set; }
+    
         public virtual Categorie Categorie1 { get; set; }
-        [Required(ErrorMessage = "svp ce champ ne doit pas etre vide")]
         public virtual Marque Marque1 { get; set; }
-        [Required(ErrorMessage = "svp ce champ ne doit pas etre vide")]
         public virtual Module Module1 { get; set; }
-        [Required(ErrorMessage = "svp ce champ ne doit pas etre vide")]
         public virtual Propretaire Propretaire1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reservation> Reservations { get; set; }
     }
 }

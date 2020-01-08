@@ -66,8 +66,15 @@
         @RenderBody()
 
     </div>
-    <footer style="padding: 50px;background-color: #6a6e82;color: #fff;margin-top:30px" class="text-center">
-        <p>&copy; @DateTime.Now.Year - Votre auto</p>
+    <footer style="padding: 50px;background-color: #6a6e82;color: #fff;margin-top:30px" class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 text-center">
+            <p>&copy; @DateTime.Now.Year - Votre auto</p>
+            @Html.ActionLink("En", "Change", "Lang", new { languageAbreviation = "en" }, new { @class = "btn btn-danger" })
+            @Html.ActionLink("Fr", "Change", "Lang", new { languageAbreviation = "fr" }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Ar", "Change", "Lang", new { languageAbreviation = "ar" }, new { @class = "btn btn-info" })
+        </div>
+        
     </footer>
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     @Scripts.Render("~/bundles/jquery")

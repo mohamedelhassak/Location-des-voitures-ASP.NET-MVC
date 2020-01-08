@@ -13,7 +13,7 @@ namespace WebApplication4.Controllers
     [Authorize]
     public class ModulesController : Controller
     {
-        private MyDbEntities5 db = new MyDbEntities5();
+        private MyDbEntities6 db = new MyDbEntities6();
 
         // GET: Modules
         public ActionResult Index()

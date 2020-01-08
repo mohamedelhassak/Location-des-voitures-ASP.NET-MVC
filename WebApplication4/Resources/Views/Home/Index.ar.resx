@@ -129,6 +129,9 @@
   <data name="choixCat" xml:space="preserve">
     <value>اختر فئة</value>
   </data>
+  <data name="choixMar" xml:space="preserve">
+    <value> اختر علامة</value>
+  </data>
   <data name="maptitre" xml:space="preserve">
     <value>مرحبا بكم عندنا ....</value>
   </data>

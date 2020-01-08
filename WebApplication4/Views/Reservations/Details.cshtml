@@ -1,0 +1,67 @@
+﻿@model WebApplication4.Models.Reservation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Reservation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.date_debut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_debut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date_fin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_fin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.montant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.montant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Client1.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client1.Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Propretaire.Nom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Propretaire.Nom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Voiture1.imma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Voiture1.imma)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
